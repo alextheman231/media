@@ -1,0 +1,39 @@
+[project]
+name = "artwork"
+version = "0.1.0"
+description = "Default template for PDM package"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = "==3.14.*"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.14",
+]
+dependencies = [ "manim>=0.19.2" ]
+[[project.authors]]
+name = "AlexMan123456"
+email = "alex.man03888@gmail.com"
+
+[dependency-groups]
+dev = [
+  "black>=26.1",
+  "pyproject-fmt>=2.16",
+  "ruff>=0.15.1",
+]
+
+[tool.pdm]
+distribution = false
+[tool.pdm.scripts]
+create-artwork = "manim -pql src/patch_it_up.py PatchItUp"
+format-black = "black src"
+lint-black = "black --check --diff src"
+format-ruff = "ruff check src --fix"
+lint-ruff = "ruff check src"
+format-pyproject = { shell = "pyproject-fmt pyproject.toml || true" }
+lint-pyproject = "pyproject-fmt --check pyproject.toml"
+format = { composite = [ "format-black", "format-ruff", "format-pyproject" ] }
+lint = { composite = [ "lint-black", "lint-ruff", "lint-pyproject" ] }
+
+[tool.pyproject-fmt]
+generate_python_version_classifiers = false
+table_format = "long"
