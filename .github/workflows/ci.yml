@@ -1,4 +1,4 @@
-name: Self CI (Internal)
+name: Media CI
 
 on:
   push:
