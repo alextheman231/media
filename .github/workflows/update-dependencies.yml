@@ -25,7 +25,7 @@ jobs:
           run_install: false
 
       - name: Use Node.js
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version: 22
           cache: "pnpm"
@@ -76,7 +76,7 @@ jobs:
         run: pdm update --update-all
 
       - name: Commit Python updates
-        uses: alextheman231/github-actions/.github/actions/commit-changes@a00c59786bf2f81fe88d9084008fc05452dc45b2 # v9.0.2
+        uses: alextheman231/github-actions/.github/actions/commit-changes@dc2d1246a158a1a04045a85a8c1bfd1978afeaf2 # v10.1.0
         with:
           message: "Update Python dependencies"
 
@@ -84,7 +84,7 @@ jobs:
         run: corepack use pnpm@latest
 
       - name: Commit PNPM update
-        uses: alextheman231/github-actions/.github/actions/commit-changes@a00c59786bf2f81fe88d9084008fc05452dc45b2 # v9.0.2
+        uses: alextheman231/github-actions/.github/actions/commit-changes@dc2d1246a158a1a04045a85a8c1bfd1978afeaf2 # v10.1.0
         id: commit_pnpm_update
         with:
           message: "Update PNPM"
@@ -95,7 +95,7 @@ jobs:
           pnpm install --no-frozen-lockfile
 
       - name: Commit JavaScript dependencies updates
-        uses: alextheman231/github-actions/.github/actions/commit-changes@a00c59786bf2f81fe88d9084008fc05452dc45b2 # v9.0.2
+        uses: alextheman231/github-actions/.github/actions/commit-changes@dc2d1246a158a1a04045a85a8c1bfd1978afeaf2 # v10.1.0
         id: commit_javascript_dependencies_updates
         with:
           message: "Update JavaScript dependencies"
@@ -106,7 +106,7 @@ jobs:
         run: actions-up -y
 
       - name: Commit GitHub Actions updates
-        uses: alextheman231/github-actions/.github/actions/commit-changes@a00c59786bf2f81fe88d9084008fc05452dc45b2 # v9.0.2
+        uses: alextheman231/github-actions/.github/actions/commit-changes@dc2d1246a158a1a04045a85a8c1bfd1978afeaf2 # v10.1.0
         id: commit_actions_updates
         with:
           message: "Update GitHub Actions"
