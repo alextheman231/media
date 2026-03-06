@@ -9,16 +9,16 @@ importers:
   .:
     devDependencies:
       alex-c-line:
-        specifier: ^1.33.5
-        version: 1.33.5
+        specifier: ^2.0.1
+        version: 2.0.1
       husky:
         specifier: ^9.1.7
         version: 9.1.7
 
 packages:
 
-  '@alextheman/utility@5.5.0':
-    resolution: {integrity: sha512-5YMpCT98L49Yh1C0QKJ60bE2lleWMqCEpCqHvmYWG1glWY0WVG5B3UHXVc9x9XMO0iS96KAHKvqSj+Cxua0/Xw==}
+  '@alextheman/utility@5.6.1':
+    resolution: {integrity: sha512-reTAMQHAYb401nzPMjys1d1T2zIVaa79GNFjUkd+uk38LgoKPwG9OkuJ/Mchs6IVSTDTcj13AcEP4bHCqLMuvQ==}
     engines: {node: '>=22.3.0'}
 
   '@inquirer/ansi@2.0.3':
@@ -162,8 +162,8 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
-  alex-c-line@1.33.5:
-    resolution: {integrity: sha512-54x6rokRNpCz4EXnMaaegh+JFckdpggfytArZrBUgaUZLgzVKL9J+Yf2jkeM+/Lb56kcczIBOPfeT4CTUYekwQ==}
+  alex-c-line@2.0.1:
+    resolution: {integrity: sha512-gz4M5ZPFVpUHmvtpd2gjGX7jh9KsOcvrY3ncHcHGyVeGdXaSCsS0V8iA46VUCDUCoq61rNAa3jqDKz3lMAF+AA==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -562,7 +562,7 @@ packages:
 
 snapshots:
 
-  '@alextheman/utility@5.5.0':
+  '@alextheman/utility@5.6.1':
     dependencies:
       dotenv: 17.3.1
       execa: 9.6.1
@@ -664,9 +664,9 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  alex-c-line@1.33.5:
+  alex-c-line@2.0.1:
     dependencies:
-      '@alextheman/utility': 5.5.0
+      '@alextheman/utility': 5.6.1
       '@inquirer/prompts': 8.3.0
       boxen: 8.0.1
       canvas: 3.2.1
