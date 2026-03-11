@@ -1,9 +1,11 @@
 import { defineAlexCLineConfig } from "alex-c-line/configs";
 
 export default defineAlexCLineConfig({
-  createPullRequestTemplate: {
-    category: "general",
-    projectType: "repository",
+  template: {
+    pullRequest: {
+      category: "general",
+      projectType: "repository",
+    },
   },
   preCommit: {
     packageManager: "pnpm",
