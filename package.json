@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "pre-commit": "alex-c-line pre-commit-2",
     "prepare": "husky",
-    "update-dependencies": "pnpm update --latest && pnpm install"
+    "update-dependencies": "pnpm update --latest && pnpm update"
   },
   "keywords": [],
   "author": "",
