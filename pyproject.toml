@@ -24,7 +24,7 @@ dev = [
 [tool.pdm]
 distribution = false
 [tool.pdm.scripts]
-create-artwork = "manim -pql src/patch_it_up.py PatchItUp"
+create-artwork = "manim -pql src/patch_it_up/artwork.py PatchItUp"
 format-black = "black src"
 lint-black = "black --check --diff src"
 format-ruff = "ruff check src --fix"
