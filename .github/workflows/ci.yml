@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: "3.14"
 
-      - name: Install system dependencies for Manim
+      - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -33,7 +33,8 @@ jobs:
           libpango1.0-dev \
           ffmpeg \
           libx11-dev \
-          libgl1-mesa-dev
+          libgl1-mesa-dev \
+          fonts-freefont-ttf
 
       - name: Setup PDM
         run: pip install pdm
@@ -43,6 +44,29 @@ jobs:
 
       - name: Run linting checks
         run: pdm run lint
+      
+      - name: Use PNPM
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        with:
+          run_install: false
+
+      - name: Use Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate the media files
+        run: pdm run generate
+
+      - name: Upload the media files to the workflow output
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: media
+          path: media
     
   actions-ci:
     uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@dc2d1246a158a1a04045a85a8c1bfd1978afeaf2 # v10.1.0
