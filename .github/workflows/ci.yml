@@ -23,6 +23,9 @@ jobs:
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: "3.14"
+      
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@7f6df1cd36597249cbf9810ff3aeff47edf8243b
 
       - name: Install system dependencies
         run: |
@@ -35,6 +38,9 @@ jobs:
           libx11-dev \
           libgl1-mesa-dev \
           fonts-freefont-ttf
+      
+      - name: Install Lato font for Patch It Up artwork
+        run: brew install font-lato
 
       - name: Setup PDM
         run: pip install pdm
