@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       alex-c-line:
-        specifier: ^2.1.0
-        version: 2.1.0
+        specifier: ^2.2.2
+        version: 2.2.2
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -162,8 +162,8 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
-  alex-c-line@2.1.0:
-    resolution: {integrity: sha512-tqqbzoXV7rRk8j708q99q8DjVhCvc/WTel1ZdmcgMkjX45XLcvGu9cjzwvyRjLr8Vw2muSC8b0VWuGhxoOCgxw==}
+  alex-c-line@2.2.2:
+    resolution: {integrity: sha512-qbcUhPtHHif+EQjmEjyw3OLgXjFR9Wou7PspsqUdt+eM9mcxmybqb8dCrmAWsmSzBA1gNUjE8taoy8oFtVEz2Q==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -757,7 +757,7 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  alex-c-line@2.1.0:
+  alex-c-line@2.2.2:
     dependencies:
       '@alextheman/utility': 5.6.2
       '@inquirer/prompts': 8.3.0

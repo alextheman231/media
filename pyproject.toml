@@ -31,8 +31,17 @@ format-ruff = "ruff check src --fix"
 lint-ruff = "ruff check src"
 format-pyproject = { shell = "pyproject-fmt pyproject.toml || true" }
 lint-pyproject = "pyproject-fmt --check pyproject.toml"
-format = { composite = [ "format-black", "format-ruff", "format-pyproject" ] }
-lint = { composite = [ "lint-black", "lint-ruff", "lint-pyproject" ] }
+format-isort = "isort src"
+lint-isort = "isort --check --diff src"
+generate = "pnpm run generate"
+format = { composite = [
+  "format-black",
+  "format-ruff",
+  "format-isort",
+  "format-pyproject",
+] }
+lint = { composite = [ "lint-black", "lint-ruff", "lint-isort", "lint-pyproject" ] }
+generate = "pnpm run generate"
 
 [tool.pyproject-fmt]
 generate_python_version_classifiers = false
