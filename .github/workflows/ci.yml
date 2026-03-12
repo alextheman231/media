@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: "3.14"
-      
+
       - name: Setup Homebrew
         uses: Homebrew/actions/setup-homebrew@7f6df1cd36597249cbf9810ff3aeff47edf8243b
 
@@ -38,9 +38,6 @@ jobs:
           libx11-dev \
           libgl1-mesa-dev \
           fonts-freefont-ttf
-      
-      - name: Install Lato font for Patch It Up artwork
-        run: brew install font-lato
 
       - name: Setup PDM
         run: pip install pdm
@@ -48,9 +45,6 @@ jobs:
       - name: Install Python dependencies
         run: pdm install
 
-      - name: Run linting checks
-        run: pdm run lint
-      
       - name: Use PNPM
         uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
         with:
@@ -62,8 +56,14 @@ jobs:
           node-version: 22
           cache: "pnpm"
 
-      - name: Install dependencies
+      - name: Install JavaScript dependencies
         run: pnpm install
+
+      - name: Run linting checks
+        run: pdm run lint
+
+      - name: Install Lato font for Patch It Up artwork
+        run: brew install font-lato
 
       - name: Generate the media files
         run: pdm run generate
@@ -77,6 +77,6 @@ jobs:
         with:
           name: media-output_${{ github.ref_name }}_${{ steps.short_hash.outputs.short_hash }}
           path: media
-    
+
   actions-ci:
     uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@dc2d1246a158a1a04045a85a8c1bfd1978afeaf2 # v10.1.0

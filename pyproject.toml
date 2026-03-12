@@ -34,13 +34,16 @@ format-pyproject = { shell = "pyproject-fmt pyproject.toml || true" }
 lint-pyproject = "pyproject-fmt --check pyproject.toml"
 format-isort = "isort src"
 lint-isort = "isort --check --diff src"
+format-yml = "pnpm run format-yml"
+lint-yml = "pnpm run lint-yml"
 format = { composite = [
+  "format-yml",
   "format-black",
   "format-ruff",
   "format-isort",
   "format-pyproject",
 ] }
-lint = { composite = [ "lint-black", "lint-ruff", "lint-isort", "lint-pyproject" ] }
+lint = { composite = [ "lint-black", "lint-ruff", "lint-isort", "lint-pyproject", "lint-yml" ] }
 generate = "pnpm run generate"
 
 [tool.pyproject-fmt]
