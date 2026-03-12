@@ -43,3 +43,6 @@ jobs:
 
       - name: Run linting checks
         run: pdm run lint
+    
+  actions-ci:
+    uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@dc2d1246a158a1a04045a85a8c1bfd1978afeaf2 # v10.1.0
