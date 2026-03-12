@@ -10,3 +10,4 @@ node_modules
 .DS_Store
 .alex-c-line.private.config.js
 .alex-c-line
+media
