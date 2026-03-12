@@ -17,6 +17,7 @@ email = "alex.man03888@gmail.com"
 [dependency-groups]
 dev = [
   "black>=26.1",
+  "isort>=8.0.1",
   "pyproject-fmt>=2.16",
   "ruff>=0.15.1",
 ]
@@ -33,7 +34,6 @@ format-pyproject = { shell = "pyproject-fmt pyproject.toml || true" }
 lint-pyproject = "pyproject-fmt --check pyproject.toml"
 format-isort = "isort src"
 lint-isort = "isort --check --diff src"
-generate = "pnpm run generate"
 format = { composite = [
   "format-black",
   "format-ruff",

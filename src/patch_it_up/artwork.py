@@ -1,4 +1,4 @@
-from manim import Scene, Text, Code, ORANGE, DOWN, VGroup, ORIGIN
+from manim import DOWN, ORANGE, ORIGIN, Code, Scene, Text, VGroup
 
 
 class PatchItUp(Scene):
