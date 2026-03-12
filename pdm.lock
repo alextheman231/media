@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:ded45b872a781be706378271edfd49592f9300720d6e310c89cad15248928a60"
+content_hash = "sha256:85272cd2ef96cd7db801789827a4378509304e3df4d162c14195b23342c496dc"
 
 [[metadata.targets]]
 requires_python = "==3.14.*"
@@ -202,6 +202,17 @@ summary = "Portable Headless OpenGL Context"
 groups = ["default"]
 files = [
     {file = "glcontext-3.0.0.tar.gz", hash = "sha256:57168edcd38df2fc0d70c318edf6f7e59091fba1cd3dadb289d0aa50449211ef"},
+]
+
+[[package]]
+name = "isort"
+version = "8.0.1"
+requires_python = ">=3.10.0"
+summary = "A Python utility / library to sort Python imports."
+groups = ["dev"]
+files = [
+    {file = "isort-8.0.1-py3-none-any.whl", hash = "sha256:28b89bc70f751b559aeca209e6120393d43fbe2490de0559662be7a9787e3d75"},
+    {file = "isort-8.0.1.tar.gz", hash = "sha256:171ac4ff559cdc060bcfff550bc8404a486fee0caab245679c2abe7cb253c78d"},
 ]
 
 [[package]]
