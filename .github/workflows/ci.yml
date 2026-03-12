@@ -60,10 +60,23 @@ jobs:
         id: short_hash
         run: echo "short_hash=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
 
+      - name: Get branch name
+        id: branch_name
+        env:
+          IS_PULL_REQUEST: ${{ github.event_name == 'pull_request' }}
+          HEAD_REF: ${{ github.head_ref }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          if [[ "$IS_PULL_REQUEST" == true ]]; then
+            echo "branch=$HEAD_REF" >> $GITHUB_OUTPUT
+            else
+            echo "branch=$REF_NAME" >> $GITHUB_OUTPUT
+          fi
+
       - name: Upload the media files to the workflow output
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
-          name: media-output_${{ github.ref_name }}_${{ steps.short_hash.outputs.short_hash }}
+          name: media-output_${{ steps.branch_name.outputs.branch }}_${{ steps.short_hash.outputs.short_hash }}
           path: media
 
   actions-ci:
