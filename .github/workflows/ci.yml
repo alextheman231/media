@@ -65,7 +65,7 @@ jobs:
       - name: Upload the media files to the workflow output
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
-          name: media
+          name: media-output_${{ github.sha }}
           path: media
     
   actions-ci:
