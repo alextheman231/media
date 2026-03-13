@@ -39,11 +39,11 @@ jobs:
           node-version: 22
           cache: "pnpm"
 
-      - name: Clear the existing media folder
-        run: rm -rf media
-
       - name: Install JavaScript dependencies
         run: pnpm install
+
+      - name: Clear the existing media folder
+        run: rm -rf media
 
       - name: Generate the media files
         run: pdm run generate
