@@ -3,7 +3,7 @@ from manim import BOLD, DOWN, ORANGE, ORIGIN, Code, Scene, Text, VGroup
 
 class PatchItUp(Scene):
     def construct(self):
-        title = Text("PATCH IT UP", font="Lato", weight=BOLD, color=ORANGE)
+        title = Text("PATCH IT UP", font="Trattatello", weight=BOLD, color=ORANGE)
         code = Code(
             code_string="""
 Run pnpm run build
