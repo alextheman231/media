@@ -57,17 +57,5 @@ jobs:
       - name: Generate the media files
         run: pdm run generate
 
-      - name: Shorten commit hash for use in media output name
-        id: short_hash
-        if: ${{ github.event_name == 'pull_request' }}
-        run: echo "short_hash=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
-
-      - name: Upload the media files to the workflow output
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
-        if: ${{ github.event_name == 'pull_request' }}
-        with:
-          name: media-output_${{ github.head_ref }}_${{ steps.short_hash.outputs.short_hash }}
-          path: media
-
   actions-ci:
     uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@dc2d1246a158a1a04045a85a8c1bfd1978afeaf2 # v10.1.0
