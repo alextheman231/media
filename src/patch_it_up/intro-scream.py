@@ -13,15 +13,17 @@ Current runner version: '2.332.0'
     Version: 20260213.493
     Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
     Build Date: 2026-02-13T00:28:41Z
-    Worker ID: {aed1c625-6eff-4b98-8bd4-b94e5359c79e}
+    Worker ID: {84988241-b7cd-4fc5-a1a7-d4771c2f0238}
     Azure Region: northcentralus
 > Operating System
-    Microsoft Windows Server 2025
-    10.0.26100
-    Datacenter
+    Ubuntu
+    24.04.3
+    LTS
 > Runner Image
-    Image: windows-2025
-    Version: 20260302.43.1
+    Image: ubuntu-24.04
+    Version: 20260302.42.1
+    Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+    Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
 > GITHUB_TOKEN Permissions
     Contents: read
     Metadata: read
