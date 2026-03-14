@@ -1,14 +1,22 @@
-from manim import Scene
+from manim import FadeIn, Scene
 
 from patch_it_up.helpers.create_code_window import create_code_window
 
 
 class ChorusPart1(Scene):
     def construct(self):
-        _code = create_code_window("""
-        Now to face the workflow of the damned!
-        I've gotta push my changes to the branch!
-        See how the actions' gonna act!
+
+        lyrics = [
+            ("Now to face the workflow of the damed!", 3.52),
+            ("I've gotta push my changes to the branch!", 2.72),
+            ("See how the action's gonna act!", 3.03),
+        ]
+
+        code = create_code_window(
+            "\n".join([line for line, _ in lyrics]),
+            None,
+        )
+        code = create_code_window("\n".join([line for line, _ in lyrics]) + """
         
         (media-3.14) ➜  media git:(patch-it-up-now) git push origin patch-it-up-now
         Enumerating objects: 9, done.
@@ -25,3 +33,14 @@ class ChorusPart1(Scene):
         To https://github.com/alextheman231/media.git
         * [new branch]      patch-it-up-now -> patch-it-up-now
         """)
+
+        self.add(code.background, code.line_numbers)
+
+        line_durations = [duration for _, duration in lyrics]
+        assert len(code.code_lines) == len(line_durations)
+
+        for line, duration in zip(code.code_lines, line_durations):
+            self.add(line)
+            self.wait(duration)
+
+        self.play(*[FadeIn(line) for line in code.code_lines[4:]])

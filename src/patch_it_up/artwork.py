@@ -1,11 +1,11 @@
-from manim import BOLD, DOWN, ORANGE, ORIGIN, Scene, Text, VGroup
+from manim import DOWN, ORIGIN, Scene, VGroup
 
+from patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
 from patch_it_up.helpers.create_code_window import create_code_window
 
 
 class PatchItUp(Scene):
     def construct(self):
-        title = Text("PATCH IT UP", font="Trattatello", weight=BOLD, color=ORANGE)
         code = create_code_window(
             code_string="""
 Run pnpm run build
@@ -36,6 +36,6 @@ Error: Process completed with exit code 1.
 """,
         ).scale(0.68)
 
-        group = VGroup(title, code).arrange(DOWN, buff=0.4).move_to(ORIGIN)
-        title.shift(0.15 * DOWN)
+        group = VGroup(PATCH_IT_UP_TITLE, code).arrange(DOWN, buff=0.4).move_to(ORIGIN)
+        PATCH_IT_UP_TITLE.shift(0.15 * DOWN)
         self.add(group)
