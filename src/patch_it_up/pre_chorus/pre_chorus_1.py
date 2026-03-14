@@ -64,21 +64,22 @@ Error: PATCH IT UUUUUUP!
             code.background, code.line_numbers, code.code_lines[0:19], PATCH_IT_UP_TITLE
         )
 
-        pulse(self, PATCH_IT_UP_TITLE)
+        self.play(pulse(PATCH_IT_UP_TITLE))
 
-        pulse(
-            self,
-            VGroup(code.background, code.line_numbers, code.code_lines[0:19]),
-            pulses=6,
-            duration=3.2,
+        self.play(
+            pulse(
+                VGroup(code.background, code.line_numbers, code.code_lines[0:19]),
+                pulses=6,
+                duration=3.2,
+            )
         )
 
         self.remove(PATCH_IT_UP_TITLE)
         self.add(code.code_lines[19:], PATCH_IT_UP_TITLE)
 
-        pulse(self, PATCH_IT_UP_TITLE)
+        self.play(pulse(PATCH_IT_UP_TITLE))
 
-        pulse(self, code, pulses=6, duration=2)
+        self.play(pulse(code, pulses=6, duration=2))
         self.play(Rotate(code, 6 * PI, run_time=1.29))
 
         self.wait(2)
