@@ -60,3 +60,5 @@ Did you forget to run actions/checkout before running your local action?
         self.play(
             self.camera.frame.animate.scale(0.05).move_to(error_lines), duration=3
         )
+
+        self.wait(2)
