@@ -72,5 +72,5 @@ Error: PATCH IT UUUUUUP!
 
         pulse_title(self, title)
 
-        self.wait(4.38)
-        self.play(self.camera.frame.animate.scale(0.05).move_to(title))
+        self.wait(1.55)
+        self.play(self.camera.frame.animate.scale(0.05).move_to(title), duration=0.55)
