@@ -42,21 +42,21 @@ Did you forget to run actions/checkout before running your local action?
 """,
         ).scale(0.5)
 
-        self.add(code.background, code.line_numbers)
+        self.add(code.background)
 
         error_lines = VGroup(*code.code_lines[-3:])
         output_lines = code.code_lines[:-3]
 
-        for i, line in enumerate(output_lines):
+        for (i, line), line_number in zip(enumerate(output_lines), code.line_numbers):
             delay = 0.1 if i < 10 else 0.15
-            self.play(FadeIn(line), run_time=delay)
+            self.play(FadeIn(line, line_number), run_time=delay)
 
         for line in error_lines:
             line.set_color(RED)
 
         self.wait(0.5)
 
-        self.add(error_lines)
+        self.add(error_lines, code.line_numbers[-3:])
         self.play(
             self.camera.frame.animate.scale(0.05).move_to(error_lines), duration=3
         )
