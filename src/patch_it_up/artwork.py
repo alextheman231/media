@@ -1,10 +1,12 @@
-from manim import BOLD, DOWN, ORANGE, ORIGIN, Code, Scene, Text, VGroup
+from manim import BOLD, DOWN, ORANGE, ORIGIN, Scene, Text, VGroup
+
+from patch_it_up.utility.create_code_window import create_code_window
 
 
 class PatchItUp(Scene):
     def construct(self):
         title = Text("PATCH IT UP", font="Trattatello", weight=BOLD, color=ORANGE)
-        code = Code(
+        code = create_code_window(
             code_string="""
 Run pnpm run build
 > @alextheman/github-actions@6.3.0 build
@@ -32,9 +34,6 @@ Run pnpm run lint
 
 Error: Process completed with exit code 1.
 """,
-            language="bash",
-            background="rectangle",
-            paragraph_config={"font": "Monospace"},
         ).scale(0.68)
 
         group = VGroup(title, code).arrange(DOWN, buff=0.4).move_to(ORIGIN)

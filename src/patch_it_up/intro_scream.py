@@ -1,9 +1,11 @@
-from manim import RED, Code, FadeIn, Scene, VGroup
+from manim import RED, FadeIn, Scene, VGroup
+
+from patch_it_up.helpers.create_code_window import create_code_window
 
 
 class IntroScream(Scene):
     def construct(self):
-        code = Code(
+        code = create_code_window(
             code_string="""
 Run Setup Job
 
@@ -38,9 +40,6 @@ Error: Can't find 'action.yml', 'action.yaml' or 'Dockerfile'
 under '/home/runner/work/media/media/.github/actions/patch-it-up'.
 Did you forget to run actions/checkout before running your local action?
 """,
-            language="bash",
-            background="rectangle",
-            paragraph_config={"font": "Monospace"},
         ).scale(0.5)
 
         self.add(code.background, code.line_numbers)
