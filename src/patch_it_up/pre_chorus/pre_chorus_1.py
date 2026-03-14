@@ -61,21 +61,24 @@ Error: PATCH IT UUUUUUP!
         self.add(group)
 
         self.add(
-            code.background, code.line_numbers, code.code_lines[0:19], PATCH_IT_UP_TITLE
+            code.background,
+            code.line_numbers[:19],
+            code.code_lines[:19],
+            PATCH_IT_UP_TITLE,
         )
 
         self.play(pulse(PATCH_IT_UP_TITLE))
 
         self.play(
             pulse(
-                VGroup(code.background, code.line_numbers, code.code_lines[0:19]),
+                VGroup(code.background, code.line_numbers[:19], code.code_lines[:19]),
                 pulses=6,
                 duration=3.2,
             )
         )
 
         self.remove(PATCH_IT_UP_TITLE)
-        self.add(code.code_lines[19:], PATCH_IT_UP_TITLE)
+        self.add(code.code_lines[19:], code.line_numbers[19:], PATCH_IT_UP_TITLE)
 
         self.play(pulse(PATCH_IT_UP_TITLE))
 

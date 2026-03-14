@@ -21,11 +21,13 @@ class Verse1(Scene):
             None,
         )
 
-        self.add(code.background, code.line_numbers)
+        self.add(code.background)
 
         line_durations = [duration for _, duration in lyrics]
         assert len(code.code_lines) == len(line_durations)
 
-        for line, duration in zip(code.code_lines, line_durations):
-            self.add(line)
+        for line, line_number, duration in zip(
+            code.code_lines, code.line_numbers, line_durations
+        ):
+            self.add(line, line_number)
             self.wait(duration)
