@@ -46,6 +46,12 @@ format = { composite = [
 lint = { composite = [ "lint-black", "lint-ruff", "lint-isort", "lint-pyproject", "lint-yml" ] }
 generate = "pnpm run generate"
 
+[tool.black]
+target-version = [ "py314" ]
+
+[tool.isort]
+profile = "black"
+
 [tool.pyproject-fmt]
 generate_python_version_classifiers = false
 table_format = "long"
