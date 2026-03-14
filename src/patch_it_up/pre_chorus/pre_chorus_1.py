@@ -1,24 +1,20 @@
 from manim import (
-    BOLD,
     DOWN,
-    ORANGE,
     ORIGIN,
     PI,
     RED,
     Rotate,
     Scene,
-    Text,
     VGroup,
 )
 
+from patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
 from patch_it_up.helpers.create_code_window import create_code_window
 from patch_it_up.helpers.pulse import pulse
 
 
 class PreChorus1(Scene):
     def construct(self):
-        title = Text("PATCH IT UP", font="Trattatello", weight=BOLD, color=ORANGE)
-
         code = create_code_window("""
 Traceback (most recent call last):
   File "/home/runner/work/media/media/src/patch_it_up/verse1.py", line 3, in <module>
@@ -60,13 +56,15 @@ Error: PATCH IT UUUUUUP!
         for i in [18, 33, 34]:
             code.code_lines[i].set_color(RED)
 
-        group = VGroup(title, code).arrange(DOWN, buff=0.4).move_to(ORIGIN)
-        title.shift(0.15 * DOWN)
+        group = VGroup(PATCH_IT_UP_TITLE, code).arrange(DOWN, buff=0.4).move_to(ORIGIN)
+        PATCH_IT_UP_TITLE.shift(0.15 * DOWN)
         self.add(group)
 
-        self.add(code.background, code.line_numbers, code.code_lines[0:19], title)
+        self.add(
+            code.background, code.line_numbers, code.code_lines[0:19], PATCH_IT_UP_TITLE
+        )
 
-        pulse(self, title)
+        pulse(self, PATCH_IT_UP_TITLE)
 
         pulse(
             self,
@@ -74,10 +72,11 @@ Error: PATCH IT UUUUUUP!
             pulses=6,
             duration=3.2,
         )
-        self.remove(title)
-        self.add(code.code_lines[19:], title)
 
-        pulse(self, title)
+        self.remove(PATCH_IT_UP_TITLE)
+        self.add(code.code_lines[19:], PATCH_IT_UP_TITLE)
+
+        pulse(self, PATCH_IT_UP_TITLE)
 
         pulse(self, code, pulses=6, duration=2)
         self.play(Rotate(code, 6 * PI, run_time=1.29))
