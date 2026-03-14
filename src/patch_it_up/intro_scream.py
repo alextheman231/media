@@ -1,9 +1,9 @@
-from manim import RED, FadeIn, Scene, VGroup
+from manim import RED, FadeIn, MovingCameraScene, VGroup
 
 from patch_it_up.helpers.create_code_window import create_code_window
 
 
-class IntroScream(Scene):
+class IntroScream(MovingCameraScene):
     def construct(self):
         code = create_code_window(
             code_string="""
@@ -56,6 +56,7 @@ Did you forget to run actions/checkout before running your local action?
 
         self.wait(0.5)
 
+        self.add(error_lines)
         self.play(
-            error_lines.animate.scale(100).move_to(self.camera.frame_center), run_time=2
+            self.camera.frame.animate.scale(0.05).move_to(error_lines), duration=2
         )
