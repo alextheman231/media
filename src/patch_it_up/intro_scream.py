@@ -1,7 +1,7 @@
 from manim import RED, Code, FadeIn, Scene, VGroup
 
 
-class PatchItUp(Scene):
+class IntroScream(Scene):
     def construct(self):
         code = Code(
             code_string="""
