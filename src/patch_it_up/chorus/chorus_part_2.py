@@ -24,10 +24,6 @@ Compressing objects: 100% (4/4), done.
 Writing objects: 100% (5/5), 401 bytes | 401.00 KiB/s, done.
 Total 5 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
 remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
-remote: 
-remote: Create a pull request for 'patch-it-up-now' on GitHub by visiting:
-remote:      https://github.com/alextheman231/media/pull/new/patch-it-up-now
-remote: 
 To https://github.com/alextheman231/media.git
  + 7b4c91a...e23a812 patch-it-up-now -> patch-it-up-now (forced update)
         """,

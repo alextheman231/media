@@ -15,17 +15,17 @@ from patch_it_up.helpers.create_code_window import create_code_window
 from patch_it_up.helpers.pulse import pulse
 
 
-def create_chorus(
-    scene: Scene, lyrics: list[tuple[str, float]], code_text: str
-) -> None:
-    code = create_code_window(
-        "\n".join([line for line, _ in lyrics]) + code_text
-    ).scale(0.68)
+def create_chorus(scene: Scene, lyrics: list[tuple[str, float]], log_text: str) -> None:
+    code = create_code_window("\n".join([line for line, _ in lyrics]) + log_text).scale(
+        0.68
+    )
 
-    lyric_code_lines = code.code_lines[:3]
-    lyric_line_numbers = code.line_numbers[:3]
+    lyrics_length = len(lyrics)
 
-    code.code_lines[3].set_color(code.background.get_color())
+    lyric_code_lines = code.code_lines[:lyrics_length]
+    lyric_line_numbers = code.line_numbers[:lyrics_length]
+
+    code.code_lines[lyrics_length].set_color(code.background.get_color())
 
     for line in lyric_code_lines:
         line.set_color(WHITE)
@@ -57,7 +57,9 @@ def create_chorus(
         Succession(
             *[
                 FadeIn(line, line_number)
-                for line, line_number in zip(code.code_lines[3:], code.line_numbers[3:])
+                for line, line_number in zip(
+                    code.code_lines[lyrics_length:], code.line_numbers[lyrics_length:]
+                )
             ],
             run_time=1.36,
         ),
