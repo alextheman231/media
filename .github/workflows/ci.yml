@@ -41,15 +41,15 @@ jobs:
           node-version: 22
           cache: "pnpm"
 
+      - name: Install JavaScript dependencies
+        run: pnpm install
+
       - name: Restore media cache
         uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
           path: media
           key: media-cache_main
           restore-keys: media-cache_main_
-
-      - name: Install JavaScript dependencies
-        run: pnpm install
 
       - name: Run linting checks
         run: pdm run lint
