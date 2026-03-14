@@ -43,7 +43,7 @@ jobs:
         run: pnpm install
 
       - name: Clear the existing media folder
-        run: rm -rf media
+        run: rm -rf dist
 
       - name: Generate the media files
         run: pdm run generate
@@ -51,7 +51,7 @@ jobs:
       - name: Save media cache
         uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
-          path: media
+          path: dist
           key: media-cache_main_${{ github.sha }}
 
       - name: Shorten commit hash for use in media output name
@@ -61,5 +61,5 @@ jobs:
       - name: Upload the media files to the workflow output
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
+          path: dist
           name: media-output_${{ steps.short_hash.outputs.short_hash }}
-          path: media
