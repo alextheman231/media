@@ -7,7 +7,7 @@ from patch_it_up.helpers.create_code_window import create_code_window
 class PatchItUp(Scene):
     def construct(self):
         code = create_code_window(
-            code_string="""
+            code_string=r"""
 Run pnpm run build
 > @alextheman/github-actions@6.3.0 build
 > tsdown

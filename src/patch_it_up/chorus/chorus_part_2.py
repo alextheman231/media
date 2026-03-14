@@ -14,7 +14,7 @@ class ChorusPart2(Scene):
                 ("The runner's making my blood wanna boil!", 2.72),
                 ("But since I misplaced dot-and-slash!", 3.03),
             ],
-            """
+            r"""
 '
 (media-3.14) ➜  media git:(patch-it-up-now) git push --force origin patch-it-up-now
 Enumerating objects: 9, done.
