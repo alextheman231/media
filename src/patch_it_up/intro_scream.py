@@ -6,7 +6,7 @@ from patch_it_up.helpers.create_code_window import create_code_window
 class IntroScream(MovingCameraScene):
     def construct(self):
         code = create_code_window(
-            code_string="""
+            code_string=r"""
 Run Setup Job
 
 Current runner version: '2.332.0'

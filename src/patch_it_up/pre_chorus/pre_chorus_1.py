@@ -15,7 +15,7 @@ from patch_it_up.helpers.pulse import pulse
 
 class PreChorus1(Scene):
     def construct(self):
-        code = create_code_window("""
+        code = create_code_window(r"""
 Traceback (most recent call last):
   File "/home/runner/work/media/media/src/patch_it_up/verse1.py", line 3, in <module>
     from patch_it_up.helpers.create_code_window import create_code_window

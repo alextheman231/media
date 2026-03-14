@@ -14,7 +14,7 @@ class ChorusPart1(Scene):
                 ("I've gotta push my changes to the branch!", 2.72),
                 ("See how the action's gonna act!", 3.03),
             ],
-            """
+            r"""
         
 (media-3.14) ➜  media git:(patch-it-up-now) git push origin patch-it-up-now
 Enumerating objects: 9, done.
