@@ -1,6 +1,6 @@
 from manim import BOLD, DOWN, ORANGE, ORIGIN, Scene, Text, VGroup
 
-from patch_it_up.utility.create_code_window import create_code_window
+from patch_it_up.helpers.create_code_window import create_code_window
 
 
 class PatchItUp(Scene):
