@@ -15,18 +15,18 @@ from patch_it_up.helpers.create_code_window import create_code_window
 from patch_it_up.helpers.pulse import pulse
 
 
-class ChorusPart1(Scene):
+class ChorusPart2(Scene):
     def construct(self):
 
         lyrics = [
-            ("Now to face the workflow of the damned!", 3.52),
-            ("I've gotta push my changes to the branch!", 2.72),
-            ("See how the action's gonna act!", 3.03),
+            ("I just want my change to be deployed!", 3.52),
+            ("The runner's making my blood wanna boil!", 2.72),
+            ("But since I misplaced dot-and-slash!", 3.03),
         ]
 
         code = create_code_window("\n".join([line for line, _ in lyrics]) + """
-        
-(media-3.14) ➜  media git:(patch-it-up-now) git push origin patch-it-up-now
+'
+(media-3.14) ➜  media git:(patch-it-up-now) git push --force origin patch-it-up-now
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
 Delta compression using up to 8 threads
@@ -39,11 +39,13 @@ remote: Create a pull request for 'patch-it-up-now' on GitHub by visiting:
 remote:      https://github.com/alextheman231/media/pull/new/patch-it-up-now
 remote: 
 To https://github.com/alextheman231/media.git
-* [new branch]      patch-it-up-now -> patch-it-up-now
+ + 7b4c91a...e23a812 patch-it-up-now -> patch-it-up-now (forced update)
         """).scale(0.68)
 
         for line in code.code_lines[:3]:
             line.set_color(WHITE)
+
+        code.code_lines[4].set_color(code.background.get_color())
 
         self.add(code.background, code.line_numbers)
 
