@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  media-upload:
+  upload:
     if: ${{ github.repository == 'alextheman231/media' }}
     runs-on: macos-latest
     steps:
