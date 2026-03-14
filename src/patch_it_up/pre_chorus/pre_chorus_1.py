@@ -3,17 +3,19 @@ from manim import (
     DOWN,
     ORANGE,
     ORIGIN,
+    PI,
     RED,
-    MovingCameraScene,
+    Rotate,
+    Scene,
     Text,
     VGroup,
 )
 
 from patch_it_up.helpers.create_code_window import create_code_window
-from patch_it_up.helpers.pulse_title import pulse_title
+from patch_it_up.helpers.pulse import pulse
 
 
-class PreChorus1(MovingCameraScene):
+class PreChorus1(Scene):
     def construct(self):
         title = Text("PATCH IT UP", font="Trattatello", weight=BOLD, color=ORANGE)
 
@@ -64,13 +66,20 @@ Error: PATCH IT UUUUUUP!
 
         self.add(code.background, code.line_numbers, code.code_lines[0:19], title)
 
-        pulse_title(self, title)
+        pulse(self, title)
 
-        self.wait(3.32)
+        pulse(
+            self,
+            VGroup(code.background, code.line_numbers, code.code_lines[0:19]),
+            pulses=6,
+            duration=3.2,
+        )
         self.remove(title)
         self.add(code.code_lines[19:], title)
 
-        pulse_title(self, title)
+        pulse(self, title)
 
-        self.wait(1.55)
-        self.play(self.camera.frame.animate.scale(0.05).move_to(title), duration=0.55)
+        pulse(self, code, pulses=6, duration=2)
+        self.play(Rotate(code, 6 * PI, run_time=1.29))
+
+        self.wait(2)
