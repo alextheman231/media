@@ -118,3 +118,5 @@ class PostChorus(Scene):
         self.start_deploying()
 
         self.patch_it_up(clear_after=False)
+
+        self.wait(2)
