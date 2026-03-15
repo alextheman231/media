@@ -1,17 +1,15 @@
 from manim import (
-    BLACK,
     BOLD,
     ORANGE,
     WHITE,
     FadeIn,
-    RoundedRectangle,
     Scene,
     Succession,
     Text,
-    VGroup,
 )
 
 from patch_it_up.helpers.create_code_window import create_code_window
+from patch_it_up.helpers.create_text_with_background import create_text_with_background
 from patch_it_up.helpers.pulse import pulse
 
 
@@ -40,17 +38,9 @@ def create_chorus(scene: Scene, lyrics: list[tuple[str, float]], log_text: str) 
         scene.add(line, line_number)
         scene.wait(duration)
 
-    title_text = Text("PATCH IT UP NOW!", font="Trattatello", weight=BOLD, color=ORANGE)
-
-    background = RoundedRectangle(corner_radius=0.2)
-
-    background.surround(title_text, buff=0.3)
-    background.set_fill(BLACK, opacity=0.3)
-    background.set_stroke(width=0)
-
-    title = VGroup(background, title_text)
-    title.set_stroke(ORANGE, width=1)
-
+    title = create_text_with_background(
+        Text("PATCH IT UP NOW!", font="Trattatello", weight=BOLD, color=ORANGE)
+    )
     scene.add_foreground_mobject(title)
 
     scene.play(
