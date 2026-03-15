@@ -1,12 +1,17 @@
+from typing import Any
+
 from manim import Code
 
 
-def create_code_window(code_string: str, language: str | None = "bash") -> Code:
+def create_code_window(
+    code_string: str, language: str | None = "bash", **kwargs: Any
+) -> Code:
     code = Code(
         code_string=code_string,
         language=language,
         background="rectangle",
         paragraph_config={"font": "Monospace"},
+        **kwargs,
     )
 
     code.background.set_fill("#161b22", opacity=1)
