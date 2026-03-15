@@ -4,7 +4,7 @@ from patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
 from patch_it_up.helpers.create_code_window import create_code_window
 
 
-class PatchItUp(Scene):
+class PatchItUpArtwork(Scene):
     def construct(self):
         code = create_code_window(
             code_string=r"""
