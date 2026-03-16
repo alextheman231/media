@@ -52,7 +52,7 @@ class PostChorus(Scene):
                 self.PATCH_IT_UP_TITLE_WITH_BACKGROUND,
                 pulses=2,
                 duration=1.27,
-                scale_factor=4,
+                scale_factor=2,
             )
         )
         self.play(
