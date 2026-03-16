@@ -55,7 +55,7 @@ jobs:
           key: media-cache_main_${{ github.sha }}
 
       - name: Remove cached files from media output
-        run: rm -rf dist/**/partial_movie_files
+        run: find dist -type d -name partial_movie_files -exec rm -rf {} +
 
       - name: Shorten commit hash for use in media output name
         id: short_hash
