@@ -1,6 +1,4 @@
 from manim import (
-    DOWN,
-    ORIGIN,
     PI,
     RED,
     Rotate,
@@ -10,11 +8,12 @@ from manim import (
 
 from patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
 from patch_it_up.helpers.create_code_window import create_code_window
+from patch_it_up.helpers.create_text_with_background import create_text_with_background
 from patch_it_up.helpers.pulse import pulse
 
 
-class PreChorus1(Scene):
-    def construct(self):
+class PreChorusBase(Scene):
+    def play_pre_chorus(self, durations: tuple[int, int, int, int, int, int]):
         code = create_code_window(r"""
 Traceback (most recent call last):
   File "/home/runner/work/media/media/src/patch_it_up/verse1.py", line 3, in <module>
@@ -56,33 +55,52 @@ Error: PATCH IT UUUUUUP!
         for i in [18, 33, 34]:
             code.code_lines[i].set_color(RED)
 
-        group = VGroup(PATCH_IT_UP_TITLE, code).arrange(DOWN, buff=0.4).move_to(ORIGIN)
-        PATCH_IT_UP_TITLE.shift(0.15 * DOWN)
-        self.add(group)
+        PATCH_IT_UP_TITLE_WITH_BACKGROUND = create_text_with_background(
+            PATCH_IT_UP_TITLE
+        )
 
         self.add(
             code.background,
             code.line_numbers[:19],
             code.code_lines[:19],
-            PATCH_IT_UP_TITLE,
+            PATCH_IT_UP_TITLE_WITH_BACKGROUND,
         )
 
-        self.play(pulse(PATCH_IT_UP_TITLE))
-
+        self.play(
+            pulse(PATCH_IT_UP_TITLE_WITH_BACKGROUND, pulses=2, duration=durations[0])
+        )
         self.play(
             pulse(
+                PATCH_IT_UP_TITLE_WITH_BACKGROUND,
+                pulses=1,
+                scale_factor=2.5,
+                duration=durations[1],
+            ),
+        )
+        self.play(
+            Rotate(
                 VGroup(code.background, code.line_numbers[:19], code.code_lines[:19]),
-                pulses=6,
-                duration=3.2,
+                6 * PI,
+                run_time=durations[2],
             )
         )
 
         self.remove(PATCH_IT_UP_TITLE)
-        self.add(code.code_lines[19:], code.line_numbers[19:], PATCH_IT_UP_TITLE)
+        self.add(
+            code.code_lines[19:],
+            code.line_numbers[19:],
+            PATCH_IT_UP_TITLE_WITH_BACKGROUND,
+        )
 
-        self.play(pulse(PATCH_IT_UP_TITLE))
-
-        self.play(pulse(code, pulses=6, duration=2))
-        self.play(Rotate(code, 6 * PI, run_time=1.29))
-
-        self.wait(2)
+        self.play(
+            pulse(PATCH_IT_UP_TITLE_WITH_BACKGROUND, pulses=2, duration=durations[3])
+        )
+        self.play(
+            pulse(
+                PATCH_IT_UP_TITLE_WITH_BACKGROUND,
+                pulses=1,
+                scale_factor=2.5,
+                duration=durations[4],
+            ),
+        )
+        self.play(Rotate(code, 6 * PI, run_time=durations[5]))
