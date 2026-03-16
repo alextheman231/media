@@ -2,6 +2,8 @@ from random import choice, uniform
 
 from manim import MovingCameraScene, RoundedRectangle, Text, VGroup
 
+from patch_it_up.helpers.shake_camera import shake_camera
+
 
 class InstrumentalBreakScene(MovingCameraScene):
     def scatter_commands(
@@ -66,13 +68,7 @@ Test Files  1 failed | 57 passed | 1 skipped (59)
                     )
                     for text in text_group
                 ],
-                self.camera.frame.animate.shift(
-                    [
-                        uniform(-shake_intensity, shake_intensity),
-                        uniform(-shake_intensity, shake_intensity),
-                        0,
-                    ]
-                ),
+                shake_camera(self.camera, shake_intensity=shake_intensity),
                 run_time=duration / frequency,
             )
 
