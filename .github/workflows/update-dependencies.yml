@@ -4,121 +4,19 @@ on:
   schedule:
     - cron: 0 21 * * 5
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   update-dependencies:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    env:
-      HUSKY: 0
-
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
-
-      - name: Use PNPM
-        uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
-        with:
-          run_install: false
-
-      - name: Use Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
-        with:
-          node-version: 22
-          cache: "pnpm"
-
-      - name: Enable Corepack
-        run: |
-          corepack enable
-          corepack --version
-
-      - name: Get alex-up-bot GitHub token
-        id: app-token
-        uses: actions/create-github-app-token@f8d387b68d61c58ab83c6c016672934102569859 # v3.0.0
-        with:
-          app-id: ${{ secrets.ALEX_UP_BOT_APP_ID }}
-          private-key: ${{ secrets.ALEX_UP_BOT_PRIVATE_KEY }}
-
-      - name: Setup GitHub user
-        run: |
-          git config --global user.name "alex-up-bot"
-          git config --global user.email "alexupbot@bot.com"
-
-      - name: Install JavaScript dependencies
-        run: pnpm install
-
-      - name: Install system dependencies for Manim
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-          pkg-config \
-          libcairo2-dev \
-          libpango1.0-dev \
-          ffmpeg \
-          libx11-dev \
-          libgl1-mesa-dev
-
-      - name: Setup PDM
-        run: pip install pdm
-
-      - name: Install Python dependencies
-        run: pdm install
-
-      - name: Install actions-up
-        run: |
-          npm install -g actions-up@latest
-          actions-up --version
-
-      - name: Update Python dependencies
-        run: pdm update --update-all
-
-      - name: Commit Python updates
-        uses: alextheman231/github-actions/.github/actions/commit-changes@e4a092a202ca5bac12242bbf53a046f32a08455a # v10.4.0
-        with:
-          message: "Update Python dependencies"
-
-      - name: Update PNPM
-        run: corepack use pnpm@latest
-
-      - name: Commit PNPM update
-        uses: alextheman231/github-actions/.github/actions/commit-changes@e4a092a202ca5bac12242bbf53a046f32a08455a # v10.4.0
-        id: commit_pnpm_update
-        with:
-          message: "Update PNPM"
-
-      - name: Update JavaScript dependencies
-        run: |
-          pnpm run update-dependencies
-          pnpm install --no-frozen-lockfile
-
-      - name: Commit JavaScript dependencies updates
-        uses: alextheman231/github-actions/.github/actions/commit-changes@e4a092a202ca5bac12242bbf53a046f32a08455a # v10.4.0
-        id: commit_javascript_dependencies_updates
-        with:
-          message: "Update JavaScript dependencies"
-
-      - name: Update GitHub Actions
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: actions-up -y
-
-      - name: Commit GitHub Actions updates
-        uses: alextheman231/github-actions/.github/actions/commit-changes@e4a092a202ca5bac12242bbf53a046f32a08455a # v10.4.0
-        id: commit_actions_updates
-        with:
-          message: "Update GitHub Actions"
-
-      - name: Create Pull Request
-        id: pull-request
-        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-          author: alex-up-bot <alexupbot@bot.com>
-          committer: alex-up-bot <alexupbot@bot.com>
-          branch: alex-up-bot/update-dependencies
-          base: main
-          title: "Update dependencies"
-          body-path: .github/PULL_REQUEST_TEMPLATE/tooling_change.md
+    if: ${{ github.repository == 'alextheman231/media' }}
+    uses: alextheman231/github-actions/.github/workflows/update-dependencies.yml@37105e9531353a1e0d4914cf954e10efe03a4bdf # v11.0.0
+    secrets:
+      APP_ID: ${{ secrets.ALEX_UP_BOT_APP_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.ALEX_UP_BOT_PRIVATE_KEY }}
+    with:
+      update_pnpm: true
+      update_javascript_dependencies: true
+      update_actions: true
+      update_python_dependencies: true
