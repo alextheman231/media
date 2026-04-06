@@ -9,17 +9,17 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.14",
 ]
-dependencies = [ "manim>=0.19.2" ]
+dependencies = [ "manim==0.19.2" ]
 [[project.authors]]
 name = "AlexMan123456"
 email = "alex.man03888@gmail.com"
 
 [dependency-groups]
 dev = [
-  "black>=26.1",
-  "isort>=8.0.1",
-  "pyproject-fmt>=2.16",
-  "ruff>=0.15.1",
+  "black==26.1",
+  "isort==8.0.1",
+  "pyproject-fmt==2.16",
+  "ruff==0.15.1",
 ]
 
 [tool.pdm]
