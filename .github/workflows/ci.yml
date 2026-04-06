@@ -58,4 +58,4 @@ jobs:
         run: pdm run generate
 
   actions-ci:
-    uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@ec0a721b5d0c0f9fd8b86437636f9bcbc64218ef # v11.0.1
+    uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@ec8321ac39e8bc3740a45bab0da66249093fcd8f # v11.0.5
