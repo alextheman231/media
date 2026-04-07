@@ -1,7 +1,7 @@
 [project]
 name = "media"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "Media used in my projects, often created with Manim."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = "==3.14.*"
@@ -36,14 +36,17 @@ format-isort = "isort src"
 lint-isort = "isort --check --diff src"
 format-yml = "pnpm run format-yml"
 lint-yml = "pnpm run lint-yml"
+format-package-json = "pnpm run format-package-json"
+lint-package-json = "pnpm run lint-package-json"
 format = { composite = [
   "format-yml",
   "format-black",
   "format-ruff",
   "format-isort",
   "format-pyproject",
+  "format-package-json"
 ] }
-lint = { composite = [ "lint-black", "lint-ruff", "lint-isort", "lint-pyproject", "lint-yml" ] }
+lint = { composite = [ "lint-black", "lint-ruff", "lint-isort", "lint-pyproject", "lint-package-json", "lint-yml" ] }
 generate = "pnpm run generate"
 
 [tool.black]
