@@ -1,6 +1,6 @@
 from manim import Scene
 
-from patch_it_up.helpers.create_code_window import create_code_window
+from utility.create_code_window import create_code_window
 
 
 def create_verse(scene: Scene, lyrics: list[tuple[str, int]]) -> None:

@@ -59,7 +59,7 @@ Test Files  1 failed | 57 passed | 1 skipped (59)
 
             self.add(text_group)
 
-            original_center = self.camera.frame.get_center()
+            original_center = self.camera.frame.get_center()  # type: ignore[union-attr]
 
             self.play(
                 *[
@@ -68,10 +68,10 @@ Test Files  1 failed | 57 passed | 1 skipped (59)
                     )
                     for text in text_group
                 ],
-                shake_camera(self.camera, shake_intensity=shake_intensity),
+                shake_camera(self.camera, shake_intensity=shake_intensity),  # type: ignore[arg-type]
                 run_time=duration / frequency,
             )
 
-            self.camera.frame.move_to(original_center)
+            self.camera.frame.move_to(original_center)  # type: ignore[union-attr]
 
             self.remove(text_group)
