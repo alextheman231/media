@@ -1,7 +1,6 @@
 from manim import FadeIn, Scene, VGroup
 
 from patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
-from patch_it_up.helpers.create_code_window import create_code_window
 from patch_it_up.helpers.create_text_with_background import create_text_with_background
 from patch_it_up.helpers.get_ranges import get_ranges
 from patch_it_up.helpers.pulse import pulse
@@ -19,6 +18,7 @@ from patch_it_up.post_chorus.helpers.constants.MERGE_THE_CHANGES import (
 from patch_it_up.post_chorus.helpers.constants.SETUP_PACKAGE import SETUP_PACKAGE
 from patch_it_up.post_chorus.helpers.constants.START_DEPLOYING import START_DEPLOYING
 from patch_it_up.post_chorus.helpers.constants.TESTING import TESTING
+from utility.create_code_window import create_code_window
 
 
 class PostChorus(Scene):
