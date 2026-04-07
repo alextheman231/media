@@ -1,7 +1,7 @@
 from manim import DOWN, ORIGIN, Scene, VGroup
 
 from patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
-from patch_it_up.helpers.create_code_window import create_code_window
+from utility.create_code_window import create_code_window
 
 
 class PatchItUpArtwork(Scene):

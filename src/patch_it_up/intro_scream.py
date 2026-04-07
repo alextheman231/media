@@ -1,6 +1,6 @@
 from manim import RED, FadeIn, MovingCameraScene, VGroup
 
-from patch_it_up.helpers.create_code_window import create_code_window
+from utility.create_code_window import create_code_window
 
 
 class IntroScream(MovingCameraScene):
