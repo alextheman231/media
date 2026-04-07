@@ -18,6 +18,7 @@ email = "alex.man03888@gmail.com"
 dev = [
   "black==26.3.1",
   "isort==8.0.1",
+  "mypy==1.20",
   "pyproject-fmt==2.21",
   "ruff==0.15.9",
 ]
@@ -38,6 +39,7 @@ format-yml = "pnpm run format-yml"
 lint-yml = "pnpm run lint-yml"
 format-package-json = "pnpm run format-package-json"
 lint-package-json = "pnpm run lint-package-json"
+lint-mypy = "mypy src"
 format = { composite = [
   "format-yml",
   "format-black",
@@ -46,7 +48,15 @@ format = { composite = [
   "format-pyproject",
   "format-package-json"
 ] }
-lint = { composite = [ "lint-black", "lint-ruff", "lint-isort", "lint-pyproject", "lint-package-json", "lint-yml" ] }
+lint = { composite = [
+  "lint-black",
+  "lint-ruff",
+  "lint-isort",
+  "lint-pyproject",
+  "lint-package-json",
+  "lint-yml",
+  "lint-mypy"
+] }
 generate = "pnpm run generate"
 
 [tool.black]
@@ -58,3 +68,7 @@ profile = "black"
 [tool.pyproject-fmt]
 generate_python_version_classifiers = false
 table_format = "long"
+
+[tool.mypy]
+explicit_package_bases = true
+mypy_path = "src"
