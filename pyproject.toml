@@ -20,7 +20,7 @@ dev = [
   "isort==8.0.1",
   "mypy==1.20",
   "pyproject-fmt==2.21",
-  "ruff==0.15.9",
+  "ruff==0.15.10",
 ]
 
 [tool.pdm]
