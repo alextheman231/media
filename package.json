@@ -17,7 +17,7 @@
   "scripts": {
     "format-package-json": "eslint --fix --suppress-all package.json && rm -f eslint-suppressions.json",
     "format-yml": "prettier --write \"**/*.{yml,yaml}\"",
-    "generate": "alex-c-line internal media generate src",
+    "generate": "alex-c-line internal media generate -r 3000,3000 src/commit_to_you",
     "lint-package-json": "eslint package.json",
     "lint-yml": "prettier --check \"**/*.{yml,yaml}\"",
     "pre-commit": "alex-c-line pre-commit",
@@ -28,7 +28,7 @@
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
   "devDependencies": {
     "@alextheman/eslint-plugin": "5.12.0",
-    "alex-c-line": "2.5.0",
+    "alex-c-line": "2.6.2",
     "eslint": "10.2.0",
     "husky": "9.1.7",
     "prettier": "3.8.2"
