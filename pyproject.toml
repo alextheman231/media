@@ -20,6 +20,7 @@ dev = [
   "isort==8.0.1",
   "mypy==1.20",
   "pyproject-fmt==2.21",
+  "pytest==9.0.3",
   "ruff==0.15.10",
 ]
 
@@ -59,6 +60,7 @@ lint = { composite = [
   "lint-yml",
   "lint-mypy"
 ] }
+test = "pytest"
 generate = "pnpm run generate"
 
 [tool.black]
@@ -74,3 +76,6 @@ table_format = "long"
 [tool.mypy]
 explicit_package_bases = true
 mypy_path = "src"
+
+[tool.pytest.ini_options]
+pythonpath = [ "src" ]
