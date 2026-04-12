@@ -1,10 +1,13 @@
-from manim import BLUE, Scene, Text
+from manim import BLUE, Scene, Text, config
 
 from utility.mobjects.stick_figure import Expression, StickFigure
 
 
 class CommitToYouArtwork(Scene):
     def construct(self):
+        config.pixel_width = 3000
+        config.pixel_height = 3000
+
         self.camera.background_color = BLUE
         stick_figure = StickFigure()
 

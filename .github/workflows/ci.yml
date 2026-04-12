@@ -44,18 +44,11 @@ jobs:
       - name: Install JavaScript dependencies
         run: pnpm install
 
-      - name: Restore media cache
-        uses: actions/cache/restore@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
-        with:
-          path: dist
-          key: media-cache_main
-          restore-keys: media-cache_main_
-
       - name: Run linting checks
         run: pdm run lint
 
-      - name: Generate the media files
-        run: pdm run generate
+      - name: Run tests
+        run: pdm run test
 
   actions-ci:
     uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@84fe032bc2c67a442beaae6648323087929d34c0 # v11.0.7
