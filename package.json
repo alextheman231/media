@@ -17,7 +17,7 @@
   "scripts": {
     "format-package-json": "eslint --fix --suppress-all package.json && rm -f eslint-suppressions.json",
     "format-yml": "prettier --write \"**/*.{yml,yaml}\"",
-    "generate": "alex-c-line internal media generate -r 3000,3000 src/commit_to_you",
+    "generate": "bash -c 'alex-c-line internal media generate $@' --",
     "lint-exact-versions": "alex-c-line pyproject check --rules prefer-exact-dependency-versions",
     "lint-package-json": "eslint package.json",
     "lint-yml": "prettier --check \"**/*.{yml,yaml}\"",

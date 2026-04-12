@@ -61,7 +61,7 @@ lint = { composite = [
   "lint-mypy"
 ] }
 test = "pytest"
-generate = "pnpm run generate"
+generate = "pnpm run generate {args:src}"
 
 [tool.black]
 target-version = [ "py314" ]
