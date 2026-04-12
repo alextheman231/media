@@ -1,23 +1,29 @@
 from manim import FadeIn, Scene, VGroup
 
-from patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
-from patch_it_up.helpers.create_text_with_background import create_text_with_background
-from patch_it_up.helpers.get_ranges import get_ranges
-from patch_it_up.helpers.pulse import pulse
-from patch_it_up.post_chorus.helpers.constants.BUILD import BUILD
-from patch_it_up.post_chorus.helpers.constants.CHANGE_THE_VERSION import (
+from scenes.patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
+from scenes.patch_it_up.helpers.create_text_with_background import (
+    create_text_with_background,
+)
+from scenes.patch_it_up.helpers.get_ranges import get_ranges
+from scenes.patch_it_up.helpers.pulse import pulse
+from scenes.patch_it_up.post_chorus.helpers.constants.BUILD import BUILD
+from scenes.patch_it_up.post_chorus.helpers.constants.CHANGE_THE_VERSION import (
     CHANGE_THE_VERSION,
 )
-from patch_it_up.post_chorus.helpers.constants.CHECKOUT_REPO import CHECKOUT_REPO
-from patch_it_up.post_chorus.helpers.constants.FETCH_THE_DOCS import FETCH_THE_DOCS
-from patch_it_up.post_chorus.helpers.constants.FORMATTING import FORMATTING
-from patch_it_up.post_chorus.helpers.constants.LINTING import LINTING
-from patch_it_up.post_chorus.helpers.constants.MERGE_THE_CHANGES import (
+from scenes.patch_it_up.post_chorus.helpers.constants.CHECKOUT_REPO import CHECKOUT_REPO
+from scenes.patch_it_up.post_chorus.helpers.constants.FETCH_THE_DOCS import (
+    FETCH_THE_DOCS,
+)
+from scenes.patch_it_up.post_chorus.helpers.constants.FORMATTING import FORMATTING
+from scenes.patch_it_up.post_chorus.helpers.constants.LINTING import LINTING
+from scenes.patch_it_up.post_chorus.helpers.constants.MERGE_THE_CHANGES import (
     MERGE_THE_CHANGES,
 )
-from patch_it_up.post_chorus.helpers.constants.SETUP_PACKAGE import SETUP_PACKAGE
-from patch_it_up.post_chorus.helpers.constants.START_DEPLOYING import START_DEPLOYING
-from patch_it_up.post_chorus.helpers.constants.TESTING import TESTING
+from scenes.patch_it_up.post_chorus.helpers.constants.SETUP_PACKAGE import SETUP_PACKAGE
+from scenes.patch_it_up.post_chorus.helpers.constants.START_DEPLOYING import (
+    START_DEPLOYING,
+)
+from scenes.patch_it_up.post_chorus.helpers.constants.TESTING import TESTING
 from utility.create_code_window import create_code_window
 
 

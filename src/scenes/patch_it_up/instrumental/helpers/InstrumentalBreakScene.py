@@ -2,7 +2,7 @@ from random import choice, uniform
 
 from manim import MovingCameraScene, RoundedRectangle, Text, VGroup
 
-from patch_it_up.helpers.shake_camera import shake_camera
+from scenes.patch_it_up.helpers.shake_camera import shake_camera
 
 
 class InstrumentalBreakScene(MovingCameraScene):

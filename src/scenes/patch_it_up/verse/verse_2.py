@@ -1,6 +1,6 @@
 from manim import Scene
 
-from patch_it_up.verse.helpers.create_verse import create_verse
+from scenes.patch_it_up.verse.helpers.create_verse import create_verse
 
 
 class Verse2(Scene):

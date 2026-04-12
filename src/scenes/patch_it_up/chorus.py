@@ -8,8 +8,10 @@ from manim import (
     Text,
 )
 
-from patch_it_up.helpers.create_text_with_background import create_text_with_background
-from patch_it_up.helpers.pulse import pulse
+from scenes.patch_it_up.helpers.create_text_with_background import (
+    create_text_with_background,
+)
+from scenes.patch_it_up.helpers.pulse import pulse
 from utility.create_code_window import create_code_window
 
 
