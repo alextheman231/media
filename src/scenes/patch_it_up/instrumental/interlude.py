@@ -1,4 +1,4 @@
-from patch_it_up.instrumental.helpers.InstrumentalBreakScene import (
+from scenes.patch_it_up.instrumental.helpers.InstrumentalBreakScene import (
     InstrumentalBreakScene,
 )
 
