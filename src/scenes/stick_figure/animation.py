@@ -3,7 +3,7 @@ from manim import BLUE, Scene, Text, config
 from utility.mobjects.stick_figure import Expression, StickFigure
 
 
-class CommitToYouArtwork(Scene):
+class StickFigureAnimation(Scene):
     def construct(self):
         config.pixel_width = 3000
         config.pixel_height = 3000
