@@ -25,8 +25,13 @@ jobs:
       - name: Setup PDM
         run: pip install pdm
 
+      - name: Check the PDM lockfile
+        run: pdm lock --check
+
       - name: Install Python dependencies
-        run: pdm install --frozen-lockfile
+        run: |
+          pdm install --frozen-lockfile
+          pdm lock --check
 
       - name: Setup PNPM
         uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
