@@ -40,6 +40,7 @@ lint-yml = "pnpm run lint-yml"
 format-package-json = "pnpm run format-package-json"
 lint-package-json = "pnpm run lint-package-json"
 lint-mypy = "mypy src"
+lint-exact-versions = "pnpm run lint-exact-versions"
 format = { composite = [
   "format-yml",
   "format-black",
@@ -53,6 +54,7 @@ lint = { composite = [
   "lint-ruff",
   "lint-isort",
   "lint-pyproject",
+  "lint-exact-versions",
   "lint-package-json",
   "lint-yml",
   "lint-mypy"
