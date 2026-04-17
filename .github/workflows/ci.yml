@@ -56,4 +56,4 @@ jobs:
         run: pdm run test
 
   actions-ci:
-    uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@1a8c8bb4c938997e1622ff4f8160f14164d1b589 # v11.0.8
+    uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@2e41fee3271c96b410b398994b6df72997e18c02 # v11.2.1
