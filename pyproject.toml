@@ -18,10 +18,10 @@ email = "alex.man03888@gmail.com"
 dev = [
   "black==26.3.1",
   "isort==8.0.1",
-  "mypy==1.20.1",
+  "mypy==1.20.2",
   "pyproject-fmt==2.21.1",
   "pytest==9.0.3",
-  "ruff==0.15.11",
+  "ruff==0.15.12",
 ]
 
 [tool.pdm]
