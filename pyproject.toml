@@ -19,29 +19,15 @@ dev = [
   "black==26.5.1",
   "isort==8.0.1",
   "mypy==2.1",
-  "pyproject-fmt==2.21.2",
+  "pyproject-fmt==2.23",
   "pytest==9.0.3",
-  "ruff==0.15.15",
+  "ruff==0.15.16",
 ]
 
 [tool.pdm]
 distribution = false
 [tool.pdm.scripts]
 create-artwork = "manim -pql src/patch_it_up/artwork.py PatchItUp"
-format-black = "black src"
-lint-black = "black --check --diff src"
-format-ruff = "ruff check src --fix"
-lint-ruff = "ruff check src"
-format-pyproject = { shell = "pyproject-fmt pyproject.toml || true" }
-lint-pyproject = "pyproject-fmt --check pyproject.toml"
-format-isort = "isort src"
-lint-isort = "isort --check --diff src"
-format-yml = "pnpm run format-yml"
-lint-yml = "pnpm run lint-yml"
-format-package-json = "pnpm run format-package-json"
-lint-package-json = "pnpm run lint-package-json"
-lint-mypy = "mypy src"
-lint-exact-versions = "pnpm run lint-exact-versions"
 format = { composite = [
   "format-yml",
   "format-black",
@@ -50,6 +36,13 @@ format = { composite = [
   "format-pyproject",
   "format-package-json"
 ] }
+format-black = "black src"
+format-isort = "isort src"
+format-package-json = "pnpm run format-package-json"
+format-pyproject = { shell = "pyproject-fmt pyproject.toml || true" }
+format-ruff = "ruff check src --fix"
+format-yml = "pnpm run format-yml"
+generate = "pnpm run generate {args:src/scenes}"
 lint = { composite = [
   "lint-black",
   "lint-ruff",
@@ -60,8 +53,15 @@ lint = { composite = [
   "lint-yml",
   "lint-mypy"
 ] }
+lint-black = "black --check --diff src"
+lint-exact-versions = "pnpm run lint-exact-versions"
+lint-isort = "isort --check --diff src"
+lint-mypy = "mypy src"
+lint-package-json = "pnpm run lint-package-json"
+lint-pyproject = "pyproject-fmt --check pyproject.toml"
+lint-ruff = "ruff check src"
+lint-yml = "pnpm run lint-yml"
 test = "pytest"
-generate = "pnpm run generate {args:src/scenes}"
 
 [tool.black]
 target-version = [ "py314" ]
@@ -74,8 +74,8 @@ generate_python_version_classifiers = false
 table_format = "long"
 
 [tool.mypy]
-explicit_package_bases = true
 mypy_path = "src"
+explicit_package_bases = true
 
 [tool.pytest.ini_options]
 pythonpath = [ "src" ]
