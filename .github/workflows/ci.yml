@@ -20,7 +20,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: "3.14"
 
@@ -56,4 +56,4 @@ jobs:
         run: pdm run test
 
   actions-ci:
-    uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@3a7c224f60dbd26c8e2f31738236b6cbc8dd96e7 # v12.0.0
+    uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@5a51ff516a9036a0f71712e2028f28d7e6fe955b # v12.0.1
