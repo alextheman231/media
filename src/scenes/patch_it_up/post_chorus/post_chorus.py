@@ -1,29 +1,29 @@
 from manim import FadeIn, Scene, VGroup
 
-from scenes.patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
+from scenes.patch_it_up.helpers.constants.patch_it_up_title import PATCH_IT_UP_TITLE
 from scenes.patch_it_up.helpers.create_text_with_background import (
     create_text_with_background,
 )
 from scenes.patch_it_up.helpers.get_ranges import get_ranges
 from scenes.patch_it_up.helpers.pulse import pulse
-from scenes.patch_it_up.post_chorus.helpers.constants.BUILD import BUILD
-from scenes.patch_it_up.post_chorus.helpers.constants.CHANGE_THE_VERSION import (
+from scenes.patch_it_up.post_chorus.helpers.constants.build import BUILD
+from scenes.patch_it_up.post_chorus.helpers.constants.change_the_version import (
     CHANGE_THE_VERSION,
 )
-from scenes.patch_it_up.post_chorus.helpers.constants.CHECKOUT_REPO import CHECKOUT_REPO
-from scenes.patch_it_up.post_chorus.helpers.constants.FETCH_THE_DOCS import (
+from scenes.patch_it_up.post_chorus.helpers.constants.checkout_repo import CHECKOUT_REPO
+from scenes.patch_it_up.post_chorus.helpers.constants.fetch_the_docs import (
     FETCH_THE_DOCS,
 )
-from scenes.patch_it_up.post_chorus.helpers.constants.FORMATTING import FORMATTING
-from scenes.patch_it_up.post_chorus.helpers.constants.LINTING import LINTING
-from scenes.patch_it_up.post_chorus.helpers.constants.MERGE_THE_CHANGES import (
+from scenes.patch_it_up.post_chorus.helpers.constants.formatting import FORMATTING
+from scenes.patch_it_up.post_chorus.helpers.constants.linting import LINTING
+from scenes.patch_it_up.post_chorus.helpers.constants.merge_the_changes import (
     MERGE_THE_CHANGES,
 )
-from scenes.patch_it_up.post_chorus.helpers.constants.SETUP_PACKAGE import SETUP_PACKAGE
-from scenes.patch_it_up.post_chorus.helpers.constants.START_DEPLOYING import (
+from scenes.patch_it_up.post_chorus.helpers.constants.setup_package import SETUP_PACKAGE
+from scenes.patch_it_up.post_chorus.helpers.constants.start_deploying import (
     START_DEPLOYING,
 )
-from scenes.patch_it_up.post_chorus.helpers.constants.TESTING import TESTING
+from scenes.patch_it_up.post_chorus.helpers.constants.testing import TESTING
 from utility.create_code_window import create_code_window
 
 
