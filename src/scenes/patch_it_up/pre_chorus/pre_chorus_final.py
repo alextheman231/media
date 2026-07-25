@@ -1,4 +1,4 @@
-from scenes.patch_it_up.pre_chorus.helpers.PreChorusBase import PreChorusBase
+from scenes.patch_it_up.pre_chorus.helpers.pre_chorus_base import PreChorusBase
 
 
 class PreChorusFinal(PreChorusBase):

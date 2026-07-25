@@ -6,7 +6,7 @@ from manim import (
     VGroup,
 )
 
-from scenes.patch_it_up.helpers.constants.PATCH_IT_UP_TITLE import PATCH_IT_UP_TITLE
+from scenes.patch_it_up.helpers.constants.patch_it_up_title import PATCH_IT_UP_TITLE
 from scenes.patch_it_up.helpers.create_text_with_background import (
     create_text_with_background,
 )
