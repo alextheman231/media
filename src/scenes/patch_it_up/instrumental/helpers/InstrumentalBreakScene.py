@@ -52,7 +52,7 @@ Test Files  1 failed | 57 passed | 1 skipped (59)
             )
 
             for text in text_group:
-                text.move_to([uniform(-1, 1), uniform(-1, 1), 0])
+                text.move_to((uniform(-1, 1), uniform(-1, 1), 0))
                 text.rotate(uniform(-0.2, 0.2))
                 text.scale(uniform(0.9, 1.2))
                 text.set_color(choice(command_colors))
@@ -63,7 +63,7 @@ Test Files  1 failed | 57 passed | 1 skipped (59)
 
             self.play(
                 *[
-                    text.animate.shift([uniform(-4, 4), uniform(-3, 3), 0]).set_opacity(
+                    text.animate.shift((uniform(-4, 4), uniform(-3, 3), 0)).set_opacity(
                         0
                     )
                     for text in text_group
