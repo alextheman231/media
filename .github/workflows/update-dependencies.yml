@@ -21,3 +21,4 @@ jobs:
       update_javascript_dependencies: true
       update_actions: true
       update_python_dependencies: true
+      body-path: .github/pull_request_template.md
