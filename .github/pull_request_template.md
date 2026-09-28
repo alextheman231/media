@@ -1,16 +1,9 @@
-# Select a Template
+# Description of Changes
 
-Please select the option that best describes your changes to `media`:
+## Risk level: Low
 
-- [Breaking Change](?template=breaking_change.md) - For changes that have a substantial effect on how the repository is used and/or deployed.
-- [New Feature](?template=new_feature.md) - For changes that add a new feature to the repository.
-- [Bug Fix](?template=bug_fix.md) - For changes that fix a bug in the repository.
-- [Tooling Change](?template=tooling_change.md) - For changes to the repository's tooling (dependencies, devDependencies, configs...).
-- [Documentation Change](?template=documentation_change.md) - For changes that affect the way that information about the repository is presented to users.
-- [Internal Change](?template=internal_change.md) - For changes to internal features that are technically accessible but not recommended for public usage.
-- [Refactor](?template=refactor.md) - For changes that improve code quality and structure without affecting user-facing behaviour.
-- [Miscellaneous](?template=miscellaneous.md) - For changes that do not fit cleanly into any of the above categories.
+This is a low risk change because it consists only of aesthetic changes to Manim animations. It must pass the CI checks in order for changes to be merged and deployed.
 
-In some cases, your pull request may be doing more than one of these. In that case, please select a template from the top-down.
-For example, if you are introducing a new feature but also making changes to tooling, please select `New Feature` as that comes before tooling in the list.
-This ensures that the most impactful aspect of the change is reflected.
+## Type of Change
+
+The type of changes made can be found on the labels associated with the pull request.
