@@ -1,3 +1,7 @@
 savePrefix: ""
 allowBuilds:
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - "@alextheman/*"
+  - alex-c-line
+  - "alextheman231/github-actions/*"
