@@ -19,9 +19,9 @@ dev = [
   "black==26.10.1",
   "isort==9.0.2",
   "mypy==2.4.1",
-  "pyproject-fmt==2.30.3",
+  "pyproject-fmt==2.30.6",
   "pytest==9.2",
-  "ruff==0.17.3",
+  "ruff==0.17.4",
   "zizmor==1.32",
 ]
 
