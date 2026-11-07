@@ -22,6 +22,7 @@ dev = [
   "pyproject-fmt==2.30.3",
   "pytest==9.2",
   "ruff==0.17.3",
+  "zizmor==1.32",
 ]
 
 [tool.pdm]
@@ -51,6 +52,7 @@ lint = { composite = [
   "lint-exact-versions",
   "lint-package-json",
   "lint-yml",
+  "lint-zizmor",
   "lint-mypy"
 ] }
 lint-black = "black --check --diff src"
@@ -61,6 +63,7 @@ lint-package-json = "pnpm run lint-package-json"
 lint-pyproject = "pyproject-fmt --check pyproject.toml"
 lint-ruff = "ruff check src"
 lint-yml = "pnpm run lint-yml"
+lint-zizmor = "zizmor ."
 test = "pytest"
 
 [tool.black]
