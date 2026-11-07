@@ -51,8 +51,9 @@ jobs:
         run: pdm run test
 
   actions-ci:
-    uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@6b4505c7a34faeadabb9c0078f595ed786bc4b0d # v14.7.0
+    uses: alextheman231/github-actions/.github/workflows/actions-ci.yml@a1aec8fe2017ded4ae4b9ff7cc63c46b3b5a8cbb # v14.7.1
     with:
+      runs-on: macos-latest
       CLIENT_ID: ${{ vars.ALEX_UP_BOT_CLIENT_ID }}
     secrets:
       APP_PRIVATE_KEY: ${{ secrets.ALEX_UP_BOT_PRIVATE_KEY }}
@@ -60,7 +61,7 @@ jobs:
   secret-scan-ci:
     permissions:
       contents: read
-    uses: alextheman231/github-actions/.github/workflows/secret-scan-ci.yml@6b4505c7a34faeadabb9c0078f595ed786bc4b0d # v14.7.0
+    uses: alextheman231/github-actions/.github/workflows/secret-scan-ci.yml@a1aec8fe2017ded4ae4b9ff7cc63c46b3b5a8cbb # v14.7.1
     with:
       github-push-before-sha: ${{ github.event.before }}
       github-push-base-sha: ${{ github.event.base_ref }}
