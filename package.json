@@ -16,11 +16,11 @@
   "sideEffects": false,
   "scripts": {
     "format-package-json": "eslint --fix --suppress-all package.json && rm -f eslint-suppressions.json",
-    "format-yml": "prettier --write \"**/*.{yml,yaml}\"",
+    "format-yml": "oxfmt \"**/*.{yml,yaml}\"",
     "generate": "bash -c 'alex-c-line internal media generate $@' --",
     "lint-exact-versions": "alex-c-line pyproject check --rules prefer-exact-dependency-versions",
     "lint-package-json": "eslint package.json",
-    "lint-yml": "prettier --check \"**/*.{yml,yaml}\"",
+    "lint-yml": "oxfmt --check \"**/*.{yml,yaml}\"",
     "pre-commit": "alex-c-line pre-commit",
     "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,10 +28,10 @@
   },
   "packageManager": "pnpm@12.18.0+sha512.9d7882d5dc82147ecfc4e062aa34834e0ad0296710a1837a1115ae012127d36b7109e321ac1598a1dd0a65597681b1e99917e12ed0d749eae91187943363beb3",
   "devDependencies": {
-    "@alextheman/eslint-plugin": "5.18.8",
+    "@alextheman/eslint-plugin": "5.18.9",
     "alex-c-line": "2.17.3",
     "eslint": "10.14.0",
     "husky": "9.1.7",
-    "prettier": "3.9.10"
+    "oxfmt": "0.78.0"
   }
 }
