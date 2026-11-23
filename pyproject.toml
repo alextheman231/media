@@ -19,10 +19,10 @@ dev = [
   "black==26.10.1",
   "isort==9.0.2",
   "mypy==2.4.1",
-  "pyproject-fmt==2.30.6",
+  "pyproject-fmt==2.31.2",
   "pytest==9.2",
-  "ruff==0.17.5",
-  "zizmor==1.32",
+  "ruff==0.17.6",
+  "zizmor==1.33.1",
 ]
 
 [tool.pdm]
